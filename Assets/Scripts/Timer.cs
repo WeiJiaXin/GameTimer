@@ -11,8 +11,10 @@ namespace GameTimer
     {
         //工作组
         private static List<TimeHandle> work_handles;
+
         //回收组
         private static Queue<TimeHandle> offline_handles;
+
         //处理器最大ID
         private static int handleMaxId;
 
@@ -31,6 +33,16 @@ namespace GameTimer
         public static TimeHandle Start(float time)
         {
             return Get().Start(time);
+        }
+
+        /// <summary>
+        /// 启动一个帧计时器
+        /// </summary>
+        /// <param name="frame">计时帧数</param>
+        /// <returns></returns>
+        public static TimeHandle StartByFrame(int frame)
+        {
+            return Get().StartByFrame(frame);
         }
 
         /// <summary>
